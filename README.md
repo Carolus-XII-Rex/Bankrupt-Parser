@@ -13,9 +13,9 @@ Each individual is represented via Tax Identification Number (TIN). We will cons
 The data to be extracted:
 
 1. Information relating to the individual:
-- Last name (*Отчество*)
+- Last name (*Фамилия*)
 - First name (*Имя*)
-- Middle name (*Фамилия*)
+- Middle name (*Отчество*)
 - Birth date (*Дата рождения*)
 - Birth place (*Место рождения*)
 - Bankruptcy region (*Регион ведения дела о банкротстве*)
@@ -29,7 +29,7 @@ The data to be extracted:
 
 2. The date and the name of the last document, which name contains "*заверш*" (From the "KAD documents" (*Документы КАД*) tab)  
 ![PrivatePersonCard_KAD](/Screenshots/PrivatePersonCard_KAD.png)  
-Further items are to be extracted from the last arbitration mabager report (*Финальный отчет*) (From the "Arbitration managers' reports" (*Отчеты АУ*) tab)  
+Further items are to be extracted from the last arbitration manager report (*Финальный отчет*) (From the "Arbitration managers' reports" (*Отчеты АУ*) tab)  
 ![PrivatePersonCard_FinalReport](/Screenshots/PrivatePersonCard_FinalReport.png)
 
 3. The opening (*Дата начала*) and the closing (*Дата окончания*) dates of the bankruptcy procedure  
@@ -57,7 +57,7 @@ The TIN is passed into the
 ```{python}
 get_headers_for_TIN(TIN) 
 ```
-function, which forms the headers for all the requests, allowing to navigate through the required pages.  
+function which forms the headers for all the requests allowing to navigate through the required pages.  
 
 It is also possible to use the 
 ```{python}
@@ -71,7 +71,7 @@ An important point to mention is the
 ```{python}
 find_string(reqired_string, list_of_strings)
 ```
-function. After looking through a certian number of individuals manually, it became clear that there are lots of typos in the required pages. Thus search for some exact phrases may not be successfull. This function allows to search for a string assuming that a certain number of typos might have taken place. (See [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance))
+function. After looking through a certian number of individuals manually, it became clear that there are lots of typos in the required pages. Thus searching for some exact phrases may not be successfull. This function allows to search for a string assuming that a certain number of typos might have taken place. (See [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance))
 
 In the end the whole process of data extraction is placed into cycle, iterating through TINs.
 
