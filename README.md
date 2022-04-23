@@ -1,5 +1,6 @@
 # Bankruptcy register parser
 Parser for bankruptcy register website: https://old.bankrot.fedresurs.ru/
+A link to the code at Jupyter nbviewer: https://nbviewer.org/github/Carolus-XII-Rex/Bankrupt-Parser/blob/master/BankruptParser.ipynb
 
 The parsing algorithm written to solve a real-life task: a list of individuals has to be checked for being in the register of bankruptcy. And if one is in the register, certain data relating to him must be extracted.
 
